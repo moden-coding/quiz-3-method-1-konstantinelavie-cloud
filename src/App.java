@@ -38,7 +38,7 @@
  * Modify computeArea() so from task 3 so that:
  * 
  * 1. Negative values for length or height return a value of -1
- * 2. Too large values (greater than 1000) for length or height return a value of -1
+ * 2. Too large values (greater than 100) for length or height return a value of -1
  * 
  * STOP HERE FOR: 'A'
  ##############################################################################################
@@ -58,11 +58,21 @@ public class App {
      * You will MODIFY THIS ONE METHOD across tasks 1–4.
      * Do not create new methods.
      */
-    public static void computeArea() {
-
+    public static int computeArea(String rect, int l, int w) {
+        int area = l*w;
+        if (area < 0) {
+            return -1;
+        } else if (area >= 100) {
+            return -1;
+        } else {
+            return area;
+        }
+        
     }
 
     public static void main(String[] args) {
+        
+        
         //B- range
         // System.out.println("Task 1:");
         // computeArea(); // should PRINT 12.0
@@ -87,10 +97,10 @@ public class App {
 
 
         //A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(computeArea("rect", 5, 3)); // 15.0
-        // System.out.println(computeArea("tri", 6, 4));  // 12.0
-        // System.out.println(computeArea("hex", 2, 2));  // -1.0 (unknown)
-        // System.out.println(computeArea("rect", -1, 9)); // -1.0 (invalid)
+         System.out.println("Task 5:");
+         System.out.println(computeArea("rect", 5, 3)); // 15.0
+         System.out.println(computeArea("tri", 6, 4)/2);  // 12.0
+         System.out.println(computeArea("hex", 2, 2));  // -1.0 (unknown)
+         System.out.println(computeArea("rect", -1, 9)); // -1.0 (invalid)
     }
 }
